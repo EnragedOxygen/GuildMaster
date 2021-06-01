@@ -5,5 +5,5 @@ using Game.GameLogic;
 using UnityEngine;
 
 [Serializable]
-public class AbilitiesPerLevelDictionary : SerializableDictionary<int,ScriptableAbilityTemplate> { }
+public class AbilitiesPerLevelDictionary : SerializableDictionary<int,ScriptableAbility> { }
 

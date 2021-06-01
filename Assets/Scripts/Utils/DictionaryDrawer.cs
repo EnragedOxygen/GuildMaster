@@ -174,4 +174,4 @@ public abstract class DictionaryDrawer<TK, TV> : PropertyDrawer
 }
  
 [CustomPropertyDrawer(typeof(AbilitiesPerLevelDictionary))]
-public class AbilitiesPerLevelDictionaryDrawer : DictionaryDrawer<int, ScriptableAbilityTemplate> { }
+public class AbilitiesPerLevelDictionaryDrawer : DictionaryDrawer<int, ScriptableAbility> { }
