@@ -14,19 +14,19 @@ public class AbstractDungeon
         Perfect = 3
     }
     
-    private StatBlock m_DungeonStatBlock;
+    public StatBlock dungeonStatBlock;
     private List<ScriptableAbility> m_DungeonRequiredAbilities= new List<ScriptableAbility>();
 
     public AbstractDungeon(StatBlock statBlock, List<ScriptableAbility> dungeonRequiredAbilities)
     {
-        m_DungeonStatBlock.SetStats(statBlock);
+        dungeonStatBlock.SetStats(statBlock);
         m_DungeonRequiredAbilities = dungeonRequiredAbilities;
     }
 
     public DungeonClearResult ClearDungeon(StatBlock partyStats, List<ScriptableAbility> partyAbilities)
     {
         var abilitiesCleared = m_DungeonRequiredAbilities.Except(partyAbilities).Any();
-        var statsCleared = m_DungeonStatBlock.CompareStats(partyStats);
+        var statsCleared = dungeonStatBlock.CompareStats(partyStats);
         
         if (statsCleared && abilitiesCleared) { return DungeonClearResult.Perfect; }
         if (statsCleared) { return DungeonClearResult.Normal; }
